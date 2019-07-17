@@ -1,0 +1,24 @@
+a:not([href]):not([tabindex]) {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+i{
+    color: aliceblue;
+    font-weight: bolder;
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    float: right;
+    margin: 0;
+}
+
+.nav-item-sobre{
+    margin-left: 10px;
+}
