@@ -14,6 +14,14 @@ export default class Todo extends Component {
     this.state = { description: '' , list:[] }
     this.handlleAdd = this.handlleAdd.bind(this)
     this.handlleChange = this.handlleChange.bind(this)
+    this.handleRemove = this.handleRemove.bind(this)
+    this.handleMarkAsDone = this.handleMarkAsDone.bind(this)
+    this.handleMarkAsPanding = this.handleMarkAsPanding.bind(this)
+  }
+
+  refresh(){
+    axios.get(`${URL}?=sort=-createdAt`)
+      .then(resp => this.setState({ ...this.setState, description : '', list : resp.data }))
   }
 
   handlleChange(e){
@@ -23,7 +31,22 @@ export default class Todo extends Component {
   handlleAdd(){
     const description = this.state.description
     axios.post(URL, { description })
-      .then(resp=> console.log('funcionouw'))
+      .then(resp=> this.refresh())
+  }
+
+  handleRemove(todo){
+    axios.delete(`${URL}/${todo._id}`)
+      .then(resp => this.refresh())
+  }
+
+  handleMarkAsDone(todo){
+    axios.put(`${URL}/${todo._id}`, { ...todo, done:true })
+      .then(resp => this.refresh())
+  }
+
+  handleMarkAsPanding(todo){
+    axios.put(`${URL}/${todo._id}`, { ...todo, done:false })
+      .then(resp => this.refresh())
   }
 
   render() {
@@ -32,8 +55,11 @@ export default class Todo extends Component {
         <Header name='Tarefas' small='Cadastro'/>
         <Form description={this.state.description}
         handlleChange={this.handlleChange}
-        handlleAdd={this.handlleAdd}/>
-        <List/>
+        handlleAdd={this.handlleAdd} />
+        <List  list={this.state.list} 
+          handleRemove={this.handleRemove}
+          handleAsPending={this.handleMarkAsPanding}
+          handleMarkAsDone={this.handleMarkAsDone}/>
       </div>
     );
   };
