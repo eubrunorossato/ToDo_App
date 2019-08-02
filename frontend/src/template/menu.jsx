@@ -1,5 +1,5 @@
 import React from 'react';
-import './menu.css'
+import '../Style/menu.css'
 
 export default props => (
   <nav className="navbar navbar-inverse bg-inverse">
@@ -13,6 +13,7 @@ export default props => (
         <ul className="nav navbar-nav navbar-left">
           <li><a href='#/todos'>Tarefas</a></li>
           <li><a href='#/about'>Sobre</a></li>
+          <li><a href='#/login'></a></li>
         </ul>
       </div>
     </div>

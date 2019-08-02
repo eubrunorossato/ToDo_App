@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Header from '../template/pageheader';
 import axios from 'axios';
-import Form from '../todo/todoform';
-import List from '../todo/todolist';
+import Form from './todoform';
+import List from './todolist';
 
 const URL = 'http://localhost:3003/api/todos'
 
@@ -56,7 +56,7 @@ export default class Todo extends Component {
         <Form description={this.state.description}
         handlleChange={this.handlleChange}
         handlleAdd={this.handlleAdd} />
-        <List  list={this.state.list} 
+        <List  list={this.state.list}
           handleRemove={this.handleRemove}
           handleAsPending={this.handleMarkAsPanding}
           handleMarkAsDone={this.handleMarkAsDone}/>

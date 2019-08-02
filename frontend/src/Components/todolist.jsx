@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '../template/iconebutton'
-import '../template/custom.css'
+import '../Style/custom.css'
 
 export default props=> {
   const renderRows = () =>{

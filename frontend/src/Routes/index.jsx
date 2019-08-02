@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { Router, Route, Redirect, hashHistory } from 'react-router';
 import decode from 'jwt-decode';
 import Todo from '../Components/todo';
-import About from '../Components/about';
 import login from '../Components/login';
+import { Router, Route, Redirect, hashHistory } from 'react-router';
 
 const checkout = () => {
   console.log("entrou no checkout");
@@ -29,14 +28,17 @@ const checkout = () => {
 }
 
 const AuthRoute = () => (
-    checkout() ? Todo : login
-)
+    checkout() ? (
+      false
+    ) : (
+      true
+    )
+  )
 
-export default props => (
-  <Router history={ hashHistory }>
-    <Route path='/todos' component={ AuthRoute() } />
-    <Route path='/about' component={ About } />
-    <Route path='/login' component={ login } />
+export default props => {
+  <Router history={hashHistory}>
+    <Route path={AuthRoute() ? '/todos' : '/login'} component={AuthRoute() ? Todo : login }/>
+    <Route path='/login' component = {login}/>
     <Redirect from='*' to='/todos' />
   </Router>
-)
+}
