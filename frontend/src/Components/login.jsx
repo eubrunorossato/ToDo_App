@@ -1,5 +1,8 @@
 import React from 'react';
+import Menu from '../template/menu'
 
 export default props => (
-  <h1>Login</h1>
+  <div>
+    <h1>Login</h1>
+  </div>
 )

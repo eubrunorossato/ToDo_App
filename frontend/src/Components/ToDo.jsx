@@ -3,6 +3,7 @@ import Header from '../template/pageheader';
 import axios from 'axios';
 import Form from './todoform';
 import List from './todolist';
+import Menu from '../template/menu'
 
 const URL = 'http://localhost:3003/api/todos'
 
@@ -52,7 +53,6 @@ export default class Todo extends Component {
   render() {
     return (
       <div>
-        <Header name='Tarefas' small='Cadastro'/>
         <Form description={this.state.description}
         handlleChange={this.handlleChange}
         handlleAdd={this.handlleAdd} />
