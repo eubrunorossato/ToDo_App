@@ -53,6 +53,7 @@ export default class Todo extends Component {
   render() {
     return (
       <div>
+        <Menu register="Register"/>
         <Form description={this.state.description}
         handlleChange={this.handlleChange}
         handlleAdd={this.handlleAdd} />

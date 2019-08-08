@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import Menu from '../template/menu';
+import { Link } from 'react-router-dom';
 
 export default class Todo extends Component {
-
-
-
   render() {
     return (
       <div>
@@ -17,8 +14,8 @@ export default class Todo extends Component {
             </div>
             <div id="navbar" className="navbar-collapse collapse">
               <ul className="nav navbar-nav navbar-left">
-                <li><a href={'#/' + this.props.register}>{this.props.register}</a></li>
-                <li><a href={'#/' + this.props.tasks}>{this.props.tasks}</a></li>
+                <li><Link to="/register">{this.props.register}</Link></li>
+                <li><Link to="/tasks">{this.props.tasks}</Link></li>
               </ul>
             </div>
           </div>
