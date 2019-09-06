@@ -57,7 +57,7 @@ export default class Todo extends Component {
         <Form description={this.state.description}
         handlleChange={this.handlleChange}
         handlleAdd={this.handlleAdd} />
-        <List  list={this.state.list}
+        <List
           handleRemove={this.handleRemove}
           handleAsPending={this.handleMarkAsPanding}
           handleMarkAsDone={this.handleMarkAsDone}/>

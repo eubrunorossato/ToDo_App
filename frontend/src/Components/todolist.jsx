@@ -1,9 +1,12 @@
 import React from 'react';
+import { connect } from "react-redux"
 import Button from '../template/iconebutton'
 import '../Style/custom.css'
 
-export default props=> {
+const Todolist = (props) => {
   const renderRows = () =>{
+    console.log(props);
+
     const list = props.list || [];
     return list.map(todo => (
       <tr key={todo._id}>
@@ -33,3 +36,6 @@ export default props=> {
     </table>
   )
 }
+
+const mapStateToProps = state => ({ list: state.todo.list })
+export default connect(mapStateToProps)(Todolist);

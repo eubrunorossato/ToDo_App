@@ -16,7 +16,7 @@ export default props => (
             <input id='userName' placeholder='User Name' className='form-control'></input>
             <h3>Password</h3>
             <input id='password' placeholder='Password' className='form-control'></input>
-            <Button style='primary' name='Login'/>
+            <Button style='btn btn-primary btn-lg' name='Login'/>
           </div>
           <col className='col-sm-3'></col>
         </div>
