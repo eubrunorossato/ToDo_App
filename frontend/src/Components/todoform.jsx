@@ -3,7 +3,7 @@ import Grid from '../template/grid'
 import { connect } from "react-redux";
 import Button from '../template/iconebutton';
 import { bindActionCreators } from "redux";
-import { changeDescription, search, add } from "./changeActions";
+import { changeDescription, search, add, remove } from "./changeActions";
 
 class TodoForm extends Component {
   constructor(props) {
